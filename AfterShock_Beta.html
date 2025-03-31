@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfterShock Calculator - GNS Science</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.v5.min.css">
+    <link rel="stylesheet" href="bootstrap/geonet.v7.css">
+    <link rel="stylesheet" href="css/aftershock.css">
+  </head>
+  <body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner">
+      <div class="spinner-content">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">Processing...</p>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <div class="container py-4">
+      <!-- Header -->
+      <header class="pb-3 mb-4 border-bottom">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h1 style="color:#8D0020;">AfterShock Calculator</h1>
+            <p class="lead mb-0">For GNS Science use only</p>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-outline-secondary btn-sm" onclick="toggleHelp()">
+              <i class="bi bi-question-circle"></i> Help
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Quick Start Guide -->
+      <div id="helpGuide" class="card mb-4" style="display: none;">
+        <div class="card-body">
+          <h5 class="card-title">Quick Start Guide</h5>
+          <ol class="mb-0">
+            <li>Enter a QuakeID or use the search feature</li>
+            <li>Click "Load Quake Info" to retrieve earthquake data</li>
+            <li>Adjust model parameters if needed</li>
+            <li>Click "Calculate Forecast" to generate predictions</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Quake Info Section -->
+      <div id="QuakeInfo">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Quake Information</h3>
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <label for="QuakeID" class="form-label">QuakeID:</label>
+              </div>
+              <div class="col-md-4">
+                <input
+                  type="text"
+                  id="QuakeID"
+                  class="form-control"
+                  value="2022p138188"
+                  pattern="[0-9A-Za-z]{11}"
+                />
+                <div class="form-text">Enter a quakeID then select Load Quake to retrieve parameters</div>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-outline-info" title="Click this to load Quake info" 
+                        aria-expanded="true" id="loadQ" onclick="loadQuake(getQuake)">
+                  Load Quake Info
+                </button>
+              </div>
+            </div>
+
+            <!-- Quake Details Display -->
+            <div id="quakeDetails" class="mt-4">
+              <table class="table table-sm">
+                <tbody>
+                  <tr><td>ID:</td><td id="qID"></td></tr>
+                  <tr><td>Magnitude:</td><td id="qMag"></td></tr>
+                  <tr><td>Depth:</td><td id="qDepth"></td></tr>
+                  <tr><td>Location:</td><td id="qLoc"></td></tr>
+                  <tr><td>Time:</td><td id="qTime"></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parameters Section -->
+      <div id="Params">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Model Parameters</h3>
+            <div class="row g-3">
+              <!-- Time Parameters -->
+              <div class="col-md-6">
+                <h4 class="h5">Time Parameters</h4>
+                <div class="mb-3">
+                  <label for="startTime" class="form-label">Start Time (days):</label>
+                  <input type="number" id="startTime" class="form-control" value="1" min="0" step="0.1"/>
+                </div>
+                <div class="mb-3">
+                  <label for="endTime" class="form-label">End Time (days):</label>
+                  <input type="number" id="endTime" class="form-control" value="30" min="1" step="1"/>
+                </div>
+              </div>
+
+              <!-- Magnitude Parameters -->
+              <div class="col-md-6">
+                <h4 class="h5">Magnitude Parameters</h4>
+                <div class="mb-3">
+                  <label for="minMag" class="form-label">Minimum Magnitude:</label>
+                  <input type="number" id="minMag" class="form-control" value="3.0" step="0.1"/>
+                </div>
+                <div class="mb-3">
+                  <label for="maxMag" class="form-label">Maximum Magnitude:</label>
+                  <input type="number" id="maxMag" class="form-control" value="8.0" step="0.1"/>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <div class="text-center mt-4">
+              <button id="doAfters" class="btn btn-primary btn-lg" onclick="doCalc()">
+                Calculate Forecast
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="Results">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Forecast Results</h3>
+            <div id="resultsTable"></div>
+            
+            <!-- Export Options -->
+            <div class="btn-group mt-3">
+              <button class="btn btn-outline-primary" onclick="exportToCSV()">
+                <i class="bi bi-download"></i> Export CSV
+              </button>
+              <button class="btn btn-outline-primary" onclick="window.print()">
+                <i class="bi bi-printer"></i> Print Report
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualization Section -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Visualization</h3>
+            <div id="chartContainer" style="height: 400px;">
+              <canvas id="forecastChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="aftershock.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

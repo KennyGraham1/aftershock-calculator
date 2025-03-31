@@ -1,0 +1,1220 @@
+a:hover {
+    text-decoration: none;
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 20px 0 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer p {
+    text-align: center;
+}
+
+#logo {
+    position: relative;
+}
+
+#logo li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+}
+
+#logo li a span {
+    position: absolute;
+    left: -10000px;
+}
+
+#gns li, #gns a {
+    float: left;
+    display: block;
+    height: 90px;
+    width: 54px;
+}
+
+#gns {
+    background: url("../images/gns_logo_50.png") -0px -0px;
+    width: 30px;
+    height:50px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#eqc {
+  background: url("../images/eqc_logo_50.png") -0px -0px;
+  width: 50px;
+  height:50px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#ccby li, #ccby a {
+    display: block;
+    height: 15px;
+    width: 80px;
+}
+
+#ccby {
+    left: 15px;
+    height: 15px;
+    width: 80px;
+}
+
+#ccby {
+    background: url('/assets/images/logos.png') -0px -100px;
+}
+
+#geonet {
+    background: url('/assets/images/logos.png') 0px -249px;
+    width: 137px;
+    height: 53px;
+    display: inline-block;
+}
+
+.geonet-logo-center {
+    display: inline-block !important;
+    margin-left: -83.5px !important;
+}
+
+.bg-blue {
+   background-color: #00008b !important;
+}
+
+.val-0 {
+    background-color: #E7DEEC !important;
+    color: black;
+    text-shadow: none;
+}
+
+.val-1 {
+    background-color: #DCC9E0 !important;
+    color: black;
+    text-shadow: none;
+}
+
+.val-2 {
+    background-color: #D1B5D3 !important;
+    color: black;
+    text-shadow: none;
+}
+
+.val-3 {
+    background-color: #A867A2 !important;
+    color: white;
+    text-shadow: none;
+    font-weight: bold;
+}
+
+.val-4 {
+    background-color: #954990 !important;
+    color: white;
+    text-shadow: none;
+    font-weight: bold;
+}
+
+.val-5 {
+    background-color: #832C82 !important;
+    color: white;
+    text-shadow: none;
+    font-weight: bold;
+}
+
+.val-green {
+     background-color: green !important;
+     color: white;
+     text-shadow: none;
+     font-weight: bold;
+ }
+
+ .val-yellow {
+     background-color: yellow !important;
+     color: black;
+     text-shadow: none;
+     font-weight: bold;
+ }
+
+ .val-orange {
+     background-color: orange !important;
+     color: white;
+     text-shadow: none;
+     font-weight: bold;
+ }
+
+ .val-red {
+     background-color: red !important;
+     color: white;
+     text-shadow: none;
+     font-weight: bold;
+ }
+
+.marker {
+    stroke-width: 1px;
+    opacity: 1;
+    stroke: #111c1c;
+}
+
+.marker-val-0 {
+    fill: #E7DEEC;
+}
+
+.marker-val-1 {
+    fill: #E7DEEC;
+}
+
+.marker-val-2 {
+    fill: #D1B5D3;
+}
+
+.marker-val-3 {
+    fill: #A867A2;
+}
+
+.marker-val-4 {
+    fill: #954990;
+}
+
+.marker-val-5 {
+    fill: #832C82;
+}
+
+.marker-mmi--1 {
+    fill: #feedde;
+}
+
+.marker-mmi-0 {
+    fill: #feedde;
+}
+
+.marker-mmi-1 {
+    fill: #feedde;
+}
+
+.marker-mmi-2 {
+    fill: #feedde;
+    background-color: #feedde;
+}
+
+.marker-mmi-3 {
+    fill: #fdd0a2;
+    background-color: #fdd0a2;
+}
+
+.marker-mmi-4 {
+    fill: #fdae6b;
+    background-color: #fdae6b;
+}
+
+.marker-mmi-5 {
+    fill: #fd8d3c;
+    background-color: #fd8d3c;
+}
+
+.marker-mmi-6 {
+    fill: #f16913;
+    background-color: #f16913;
+}
+
+.marker-mmi-7 {
+    fill: #d94801;
+    background-color: #d94801;
+}
+
+.marker-mmi-8 {
+    fill: #8c2d04;
+    background-color: #8c2d04;
+}
+
+.marker-mmi-9 {
+    fill: #702403;
+    background-color: #702403;
+}
+
+/* tints of #008d6d http://www.color-hex.com/color/008d6d */
+
+/* latest or most recent = 10*/
+.marker-age-10 {
+    fill: #008d6d;
+}
+
+.marker-age-9 {
+    fill: #19987b;
+}
+
+.marker-age-8 {
+    fill: #32a38a;
+}
+
+.marker-age-7 {
+    fill: #4caf98;
+}
+
+.marker-age-6 {
+    fill: #66baa7;
+}
+
+.marker-age-5 {
+    fill: #7fc6b6;
+}
+
+.marker-age-4 {
+    fill: #99d1c4;
+}
+
+.marker-age-3 {
+    fill: #b2dcd3;
+}
+
+.marker-age-2 {
+    fill: #cce8e1;
+}
+
+.marker-age-1 {
+    fill: #e5f3f0;
+}
+
+.marker-age-0 {
+    fill: #ffffff;
+}
+
+.marker-show {
+    fill: #8d6d00;
+}
+
+.marker-hide {
+    fill: #787878;
+}
+
+.map-label-link {
+    fill: #8D0020;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.map-label {
+    fill: #172727;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.central {
+    dominant-baseline: central;
+}
+
+.nzmap-land {
+    fill: #f0f5f5;
+    stroke-width: 0.75px;
+    stroke-linejoin: round;
+    stroke: #778899;
+}
+
+.nzmap-lake {
+    fill: #ffffff;
+    stroke-width: 0.75px;
+    stroke: #778899;
+}
+
+.map-label-line {
+    stroke: #6d8383;
+    stroke-width: 1px;
+}
+
+.map-line-light {
+    stroke: #d3d3d3;
+    stroke-width: 1px;
+}
+
+.xy-font {
+    font-family: Arial, sans-serif;
+    fill: #2f4f4f;
+    font-size: 18px;
+}
+
+.xy-title {
+    font-size: 20px;
+}
+
+.xy-axis-label {
+    font-size: 16px;
+}
+
+.xy-marker-label {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.xy-grid {
+    stroke: #2f4f4f;
+    stroke-width: 1;
+    fill: none;
+}
+
+.xy-axis {
+    stroke: #2f4f4f;
+    stroke-width: 1;
+    fill: none;
+}
+
+.dl-horizontal dt {
+    float: left;
+    width: 80px;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+    color: #777;
+}
+
+.dl-horizontal dd {
+    margin-left: 100px;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.quake-list-icon {
+    width: 100px;
+    height: 125px;
+}
+
+.anchor {
+    padding-top: 90px;
+    visibility: hidden;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    background-image: url("/assets/images/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+}
+.icon-chevron-up {
+    background-position: -288px -120px;
+}
+.icon-chevron-down {
+    background-position: -313px -119px;
+}
+
+.icon-calendar{
+    background-position:-192px -120px
+}
+
+.leaflet-control-attribution:hover {
+    cursor: pointer;
+}
+.felt-report-table {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+.felt-report-table td {
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+.felt-report-table th {
+    padding-bottom: 1px;
+    padding-top: 3px;
+}
+.felt-report-table-count-column {
+    text-align: right !important;
+}
+
+hr.section {
+    margin-top: 0.5rem;
+    border: 0;
+    height: 1px;
+    background: #373a3c;;
+}
+
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+*/
+.datepicker {
+    top: 0;
+    left: 0;
+    padding: 4px;
+    margin-top: 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    /*.dow {
+      border-top: 1px solid #ddd !important;
+    }*/
+
+}
+.datepicker:before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -7px;
+    left: 6px;
+}
+.datepicker:after {
+    content: '';
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    position: absolute;
+    top: -6px;
+    left: 7px;
+}
+.datepicker > div {
+    display: none;
+}
+.datepicker table {
+    width: 100%;
+    margin: 0;
+}
+.datepicker td,
+.datepicker th {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.datepicker td.day:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+.datepicker td.day.disabled {
+    color: #eeeeee;
+}
+.datepicker td.old,
+.datepicker td.new {
+    color: #999999;
+}
+.datepicker td.active,
+.datepicker td.active:hover {
+    color: #ffffff;
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #0044cc;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td.active:hover,
+.datepicker td.active:hover:hover,
+.datepicker td.active:focus,
+.datepicker td.active:hover:focus,
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active,
+.datepicker td.active.disabled,
+.datepicker td.active:hover.disabled,
+.datepicker td.active[disabled],
+.datepicker td.active:hover[disabled] {
+    color: #ffffff;
+    background-color: #0044cc;
+    *background-color: #003bb3;
+}
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active {
+    background-color: #003399 \9;
+}
+.datepicker td span {
+    display: block;
+    width: 47px;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.datepicker td span:hover {
+    background: #eeeeee;
+}
+.datepicker td span.active {
+    color: #ffffff;
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #0044cc;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td span.active:hover,
+.datepicker td span.active:focus,
+.datepicker td span.active:active,
+.datepicker td span.active.active,
+.datepicker td span.active.disabled,
+.datepicker td span.active[disabled] {
+    color: #ffffff;
+    background-color: #0044cc;
+    *background-color: #003bb3;
+}
+.datepicker td span.active:active,
+.datepicker td span.active.active {
+    background-color: #003399 \9;
+}
+.datepicker td span.old {
+    color: #999999;
+}
+.datepicker th.switch {
+    width: 145px;
+}
+.datepicker th.next,
+.datepicker th.prev {
+    font-size: 21px;
+}
+.datepicker thead tr:first-child th {
+    cursor: pointer;
+}
+.datepicker thead tr:first-child th:hover {
+    background: #eeeeee;
+}
+
+.date-input-small {
+    width: 100px;
+}
+
+.input-small {
+    max-width: 175px;
+    height: 40px;
+    color: #333;
+    border: 1px solid #ced4da;
+    padding: 3px 5px;
+}
+
+/* Reduced figure size for drums etc. */
+.img-resized   {
+    width:400px;
+}
+
+.quakeSvg   {
+    cursor: pointer;
+}
+
+
+.fa-2   {
+    font-size: 2em !important;
+    padding-right: 0.3em;
+}
+
+.social-icon a {
+    color: inherit;
+ }
+
+.alert-lead {
+    background-color: #eeeeee;
+    border-color: #dddddd;
+}
+
+.vabIDLabel  {
+    text-transform: uppercase;
+    padding-right: 1em;
+}
+
+.vabIDValue  {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.vabValue   {
+    font-size: 1.2em;
+}
+
+.vabTime   {
+    font-size: 0.9em;
+    color: #1f2021;
+}
+
+.user-logo {
+     height: auto;
+     width: 64px;
+}
+
+.markdown-body pre {
+    padding: 10px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+}
+.markdown-body code {
+    padding: 5px;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,0.05);
+    color: #24292e;
+    border-radius: 3px;
+}
+
+.markdown-body pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+}
+
+.markdown-body table, .markdown-body th, .markdown-body td {
+    border: 1px solid;
+    border-color: lightgray;
+    padding: 5px;
+}
+
+.markdown-img-portrait{
+    height:480px;
+}
+.markdown-img-landscape{
+    height:auto;
+}
+
+.figure-video {
+   display:block;
+}
+
+.box{
+	width:12px;
+	height:16px;
+	display:inline-grid;
+	padding-bottom: 2px;
+}
+
+.dropdown-toggle::after {
+    border-top: .7em solid;
+    border-right: .4em solid transparent;
+    border-left: .4em solid transparent;
+    vertical-align: middle;
+}
+
+.search-link    {
+    width: 100%;
+    margin-bottom: 0.5em;
+    margin-top: -1em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+svg[viewBox="0 0 500 623"], svg[viewBox="0 0 800 290"] {
+    width: 100%;
+}
+
+.collapse-link::after  {
+    font-family: FontAwesome;
+    content: " \f106";
+    vertical-align: top;
+    border: none;
+}
+
+.expand-link::after  {
+    font-family: FontAwesome;
+    content: " \f107";
+    vertical-align: top;
+    border: none;
+}
+
+.badge-news {
+    padding: 0.4em 1.0em;
+    margin-bottom:5px;
+    border-radius: 1rem;
+    font-weight: 500;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .input-small    {
+        max-width: 160px;
+    }
+}
+
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+*/
+.datepicker {
+    top: 0;
+    left: 0;
+    padding: 4px;
+    margin-top: 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    /*.dow {
+      border-top: 1px solid #ddd !important;
+    }*/
+
+}
+.datepicker:before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -7px;
+    left: 6px;
+}
+.datepicker:after {
+    content: '';
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    position: absolute;
+    top: -6px;
+    left: 7px;
+}
+.datepicker > div {
+    display: none;
+}
+.datepicker table {
+    width: 100%;
+    margin: 0;
+}
+.datepicker td,
+.datepicker th {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.datepicker td.day:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+.datepicker td.day.disabled {
+    color: #eeeeee;
+}
+.datepicker td.old,
+.datepicker td.new {
+    color: #999999;
+}
+.datepicker td.active,
+.datepicker td.active:hover {
+    color: #ffffff;
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #0044cc;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td.active:hover,
+.datepicker td.active:hover:hover,
+.datepicker td.active:focus,
+.datepicker td.active:hover:focus,
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active,
+.datepicker td.active.disabled,
+.datepicker td.active:hover.disabled,
+.datepicker td.active[disabled],
+.datepicker td.active:hover[disabled] {
+    color: #ffffff;
+    background-color: #0044cc;
+    *background-color: #003bb3;
+}
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active {
+    background-color: #003399 \9;
+}
+.datepicker td span {
+    display: block;
+    width: 47px;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.datepicker td span:hover {
+    background: #eeeeee;
+}
+.datepicker td span.active {
+    color: #ffffff;
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #0044cc;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td span.active:hover,
+.datepicker td span.active:focus,
+.datepicker td span.active:active,
+.datepicker td span.active.active,
+.datepicker td span.active.disabled,
+.datepicker td span.active[disabled] {
+    color: #ffffff;
+    background-color: #0044cc;
+    *background-color: #003bb3;
+}
+.datepicker td span.active:active,
+.datepicker td span.active.active {
+    background-color: #003399 \9;
+}
+.datepicker td span.old {
+    color: #999999;
+}
+.datepicker th.switch {
+    width: 145px;
+}
+.datepicker th.next,
+.datepicker th.prev {
+    font-size: 21px;
+}
+.datepicker thead tr:first-child th {
+    cursor: pointer;
+}
+.datepicker thead tr:first-child th:hover {
+    background: #eeeeee;
+}
+.datepicker.dropdown-menu {
+    background-color: #ffffff;
+}
+.input-append.date .add-on i,
+.input-prepend.date .add-on i {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+.no-gutter [class*="col-"] {
+    padding-left:0;
+    padding-right:0;
+}
+
+.loaderContainer {
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+.loaderLogo,
+.loader {
+    grid-area: 1/2;
+}
+.loaderLogo {
+    height: 60%;
+    width: 60%;
+    margin: auto;
+}
+.loader {
+    border: 12px solid white;
+    border-radius: 50%;
+    border-top: 1px solid #f3f3f3;
+    border-right: 4px solid #f3f3f3;
+    border-left: 2px solid white;
+    border-bottom: 3px solid white;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: spin 1.2s linear infinite;
+    animation: spin 1.2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Station code input autocomplete feature*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+.autocomplete-container {
+    position: absolute;
+    background-color: #fff;
+    z-index: 1000;
+    border: 1px solid #d4d4d4;
+}
+.autocomplete-items {
+    display: inline-block;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    width: 80px;
+    vertical-align: top;
+    background-color: #fff;
+}
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-right: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+    z-index: 100;
+    position: relative;
+}
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+input#code::-webkit-input-placeholder  {
+    color: #ccc;
+}
+
+input#code:-moz-placeholder  {
+    color: #ccc;
+}
+
+input#code::-moz-placeholder  {
+    color: #ccc;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #ccc;
+}
+
+/* SVG responsiveness workaround for Internet Explorer */
+.svg-container  {
+    height: 0;
+    padding-top: 125%;
+    position: relative;
+}
+
+.svg-container-140  {
+    height: 0;
+    padding-top: 140%;
+    position: relative;
+}
+
+.svg-container > svg, .svg-container-140 > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.font-size-reduced {
+    font-size: 90%;
+}
+
+/* Override bootstrap colour settings */
+.alert-info-box {
+    color: #31708f !important;
+    background-color: #d9edf7 !important;
+}
+
+.alert-success  {
+    color: #3c763d !important;
+    background-color: #dff0d8 !important;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.form-control {
+  color: #55595c;
+}
+.form-control:focus {
+  color: rgba(0,0,0,0.75);
+}
+.felt.form-control::placeholder	{
+    color: #8c8c8c;
+}
+
+/* Survey Monkey popup */
+.smcx-modal {
+    top: auto !important;
+    left: auto !important;
+    bottom: 0%;
+    right: 0%;
+}
+
+/** for some reason the designer changed the primary color to dark grey */
+.btn-primary {
+  background-color:#8D0020;
+  border-color: #8D0020;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color:#6d0000;
+    border-color: #6d0000;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+.sensor-img {
+   width:12px;
+   height:12px;
+}
+
+.cursor-pointer {
+   cursor: pointer;
+}
+.jumbotron{
+   padding:1rem;
+   margin-top:1rem;
+   margin-bottom:1rem;
+   background-color: #e9ecef;
+   border-radius: .3rem;
+}
+
+/** override bootstrap h2 style, to included in next bootstrap build */
+h2 {
+  margin-top: 15px !important;
+}
+
+.w-98 {
+    width: 98%;
+}
+
+/* bootstrap v5 bug */
+.table {
+    --bs-table-accent-bg: transparent!important;
+    border-color: #D8D8DA;
+}
+
+.table>:not(:last-child)>:last-child>* {
+  border-bottom-color: inherit;
+}
+
+.modal-header .close {
+    background-color: transparent;
+    border: 0;
+    padding: 15px;
+    margin: -1rem -1rem -1rem auto;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+li .show {
+   outline: none;
+}
+
+.popover-header {
+   margin-top: 0px !important;
+}
+
+.dropdown-check{
+  padding: .5rem;
+  color:#fff;
+}
+
+#filter_form button{
+  height: 43px;
+  font-size: 18px;
+}
+
+#selectNews{
+  max-width: 260px;
+}
+
+#filter_form .form-check-label{
+ font-size: 18px;
+}
+
+#filter_form .input-small {
+    height: 43px;
+    font-size: 18px;
+}
+
+#newsOptions input[type="radio"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+}
+
+#newsOptions label{
+ font-size: 18px;
+ padding: 0.5em 0.5em;
+}
