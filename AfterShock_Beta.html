@@ -6,48 +6,137 @@
     <title>AfterShock Calculator - GNS Science</title>
     <link rel="stylesheet" href="./bootstrap/bootstrap.v5.min.css">
     <link rel="stylesheet" href="bootstrap/geonet.v7.css">
+    <link rel="stylesheet" href="css/aftershock.css">
   </head>
   <body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner">
+      <div class="spinner-content">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">Processing...</p>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
     <div class="container py-4">
       <!-- Header -->
       <header class="pb-3 mb-4 border-bottom">
-        <h1 style="text-align: left; color:#8D0020;">AfterShock Calculator</h1>
-        <p class="lead">For GNS Science use only</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h1 style="color:#8D0020;">AfterShock Calculator</h1>
+            <p class="lead mb-0">For GNS Science use only</p>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-outline-secondary btn-sm" onclick="toggleHelp()">
+              <i class="bi bi-question-circle"></i> Help
+            </button>
+          </div>
+        </div>
       </header>
 
-      <div id="QuakeInfo">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h3 class="card-title">Quake Information</h3>
-            <div class="row g-3 align-items-center">
-              <div class="col-auto">
-                <label for="QuakeID" class="form-label">QuakeID:</label>
+      <!-- Quick Start Guide (Initially Hidden) -->
+      <div id="helpGuide" class="card mb-4" style="display: none;">
+        <div class="card-body">
+          <h5 class="card-title">Quick Start Guide</h5>
+          <ol class="mb-0">
+            <li>Enter a QuakeID or use the search feature</li>
+            <li>Click "Load Quake Info" to retrieve earthquake data</li>
+            <li>Adjust model parameters if needed</li>
+            <li>Click "Calculate Forecast" to generate predictions</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-6">
+          <!-- Quake Info Card -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="card-title">Quake Information</h3>
+              <div class="mb-3">
+                <div class="input-group">
+                  <input type="text" id="QuakeID" class="form-control" 
+                         placeholder="Enter QuakeID" pattern="[0-9A-Za-z]{11}">
+                  <button class="btn btn-outline-secondary" type="button" 
+                          onclick="showQuakeSearch()">
+                    <i class="bi bi-search"></i>
+                  </button>
+                  <button class="btn btn-primary" onclick="loadQuake(getQuake)">
+                    Load Quake Info
+                  </button>
+                </div>
+                <div class="form-text">Enter an 11-character QuakeID or use search</div>
               </div>
-              <div class="col-md-4">
-                <input
-                  type="text"
-                  id="QuakeID"
-                  class="form-control"
-                  value="2022p138188"
-                  pattern="[0-9A-Za-z]{11}"
-                />
-                <div class="form-text">Enter a quakeID then select Load Quake to retrieve parameters</div>
+              
+              <!-- Quake Details (Initially Hidden) -->
+              <div id="quakeDetails" class="d-none">
+                <table class="table table-sm">
+                  <tbody>
+                    <tr><td>Magnitude:</td><td id="qMag"></td></tr>
+                    <tr><td>Location:</td><td id="qLoc"></td></tr>
+                    <tr><td>Depth:</td><td id="qDepth"></td></tr>
+                    <tr><td>Time:</td><td id="qTime"></td></tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-auto">
-                <button type="submit" class="btn btn-outline-info" title="Click this to load Quake info" aria-expanded="true" id="loadQ" onclick="loadQuake(getQuake)">Load Quake Info</button>
+            </div>
+          </div>
+          
+          <!-- Model Parameters Card -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="card-title">Model Parameters</h3>
+              <!-- Add your existing parameter inputs here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6">
+          <!-- Results Card -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="card-title">Forecast Results</h3>
+              <div id="resultsContainer">
+                <!-- Results will be populated here -->
+              </div>
+              
+              <!-- Export Options -->
+              <div class="btn-group mt-3">
+                <button class="btn btn-outline-primary" onclick="exportToCSV()">
+                  <i class="bi bi-download"></i> Export CSV
+                </button>
+                <button class="btn btn-outline-primary" onclick="prepareForPrinting()">
+                  <i class="bi bi-printer"></i> Print Report
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart Card -->
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Visualization</h3>
+              <div id="chartContainer">
+                <!-- Chart will be rendered here -->
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Rest of your application content -->
     </div>
 
-    <!-- Add Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     
-    <!-- Application Scripts -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="aftershock.js"></script>
     <script type="module" src="js/main.js"></script>
   </body>
