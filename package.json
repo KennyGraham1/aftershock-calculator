@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "homepage": "https://kennygraham1.github.io/aftershock-calculator",
   "scripts": {
+    "predeploy": "cp -r aftershock.js bootstrap css js AfterShock_Beta.html index.html ./",
     "deploy": "gh-pages -d . --dotfiles true"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
