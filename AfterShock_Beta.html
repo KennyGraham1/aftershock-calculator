@@ -38,7 +38,7 @@
         </div>
       </header>
 
-      <!-- Quick Start Guide (Initially Hidden) -->
+      <!-- Quick Start Guide -->
       <div id="helpGuide" class="card mb-4" style="display: none;">
         <div class="card-body">
           <h5 class="card-title">Quick Start Guide</h5>
@@ -51,81 +51,117 @@
         </div>
       </div>
 
-      <!-- Main Content -->
-      <div class="row">
-        <!-- Left Column -->
-        <div class="col-md-6">
-          <!-- Quake Info Card -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <h3 class="card-title">Quake Information</h3>
-              <div class="mb-3">
-                <div class="input-group">
-                  <input type="text" id="QuakeID" class="form-control" 
-                         placeholder="Enter QuakeID" pattern="[0-9A-Za-z]{11}">
-                  <button class="btn btn-outline-secondary" type="button" 
-                          onclick="showQuakeSearch()">
-                    <i class="bi bi-search"></i>
-                  </button>
-                  <button class="btn btn-primary" onclick="loadQuake(getQuake)">
-                    Load Quake Info
-                  </button>
-                </div>
-                <div class="form-text">Enter an 11-character QuakeID or use search</div>
+      <!-- Quake Info Section -->
+      <div id="QuakeInfo">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Quake Information</h3>
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <label for="QuakeID" class="form-label">QuakeID:</label>
               </div>
-              
-              <!-- Quake Details (Initially Hidden) -->
-              <div id="quakeDetails" class="d-none">
-                <table class="table table-sm">
-                  <tbody>
-                    <tr><td>Magnitude:</td><td id="qMag"></td></tr>
-                    <tr><td>Location:</td><td id="qLoc"></td></tr>
-                    <tr><td>Depth:</td><td id="qDepth"></td></tr>
-                    <tr><td>Time:</td><td id="qTime"></td></tr>
-                  </tbody>
-                </table>
+              <div class="col-md-4">
+                <input
+                  type="text"
+                  id="QuakeID"
+                  class="form-control"
+                  value="2022p138188"
+                  pattern="[0-9A-Za-z]{11}"
+                />
+                <div class="form-text">Enter a quakeID then select Load Quake to retrieve parameters</div>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-outline-info" title="Click this to load Quake info" 
+                        aria-expanded="true" id="loadQ" onclick="loadQuake(getQuake)">
+                  Load Quake Info
+                </button>
               </div>
             </div>
+
+            <!-- Quake Details Display -->
+            <div id="quakeDetails" class="mt-4">
+              <table class="table table-sm">
+                <tbody>
+                  <tr><td>ID:</td><td id="qID"></td></tr>
+                  <tr><td>Magnitude:</td><td id="qMag"></td></tr>
+                  <tr><td>Depth:</td><td id="qDepth"></td></tr>
+                  <tr><td>Location:</td><td id="qLoc"></td></tr>
+                  <tr><td>Time:</td><td id="qTime"></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          
-          <!-- Model Parameters Card -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <h3 class="card-title">Model Parameters</h3>
-              <!-- Add your existing parameter inputs here -->
+        </div>
+      </div>
+
+      <!-- Parameters Section -->
+      <div id="Params">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Model Parameters</h3>
+            <div class="row g-3">
+              <!-- Time Parameters -->
+              <div class="col-md-6">
+                <h4 class="h5">Time Parameters</h4>
+                <div class="mb-3">
+                  <label for="startTime" class="form-label">Start Time (days):</label>
+                  <input type="number" id="startTime" class="form-control" value="1" min="0" step="0.1"/>
+                </div>
+                <div class="mb-3">
+                  <label for="endTime" class="form-label">End Time (days):</label>
+                  <input type="number" id="endTime" class="form-control" value="30" min="1" step="1"/>
+                </div>
+              </div>
+
+              <!-- Magnitude Parameters -->
+              <div class="col-md-6">
+                <h4 class="h5">Magnitude Parameters</h4>
+                <div class="mb-3">
+                  <label for="minMag" class="form-label">Minimum Magnitude:</label>
+                  <input type="number" id="minMag" class="form-control" value="3.0" step="0.1"/>
+                </div>
+                <div class="mb-3">
+                  <label for="maxMag" class="form-label">Maximum Magnitude:</label>
+                  <input type="number" id="maxMag" class="form-control" value="8.0" step="0.1"/>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <div class="text-center mt-4">
+              <button id="doAfters" class="btn btn-primary btn-lg" onclick="doCalc()">
+                Calculate Forecast
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="Results">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Forecast Results</h3>
+            <div id="resultsTable"></div>
+            
+            <!-- Export Options -->
+            <div class="btn-group mt-3">
+              <button class="btn btn-outline-primary" onclick="exportToCSV()">
+                <i class="bi bi-download"></i> Export CSV
+              </button>
+              <button class="btn btn-outline-primary" onclick="window.print()">
+                <i class="bi bi-printer"></i> Print Report
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Right Column -->
-        <div class="col-md-6">
-          <!-- Results Card -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <h3 class="card-title">Forecast Results</h3>
-              <div id="resultsContainer">
-                <!-- Results will be populated here -->
-              </div>
-              
-              <!-- Export Options -->
-              <div class="btn-group mt-3">
-                <button class="btn btn-outline-primary" onclick="exportToCSV()">
-                  <i class="bi bi-download"></i> Export CSV
-                </button>
-                <button class="btn btn-outline-primary" onclick="prepareForPrinting()">
-                  <i class="bi bi-printer"></i> Print Report
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Chart Card -->
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Visualization</h3>
-              <div id="chartContainer">
-                <!-- Chart will be rendered here -->
-              </div>
+        <!-- Visualization Section -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Visualization</h3>
+            <div id="chartContainer" style="height: 400px;">
+              <canvas id="forecastChart"></canvas>
             </div>
           </div>
         </div>
