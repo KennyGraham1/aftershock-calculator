@@ -336,7 +336,7 @@ function setupPrintFunctionality() {
 }
 
 /**
- * Very simple print function - just use window.print()
+ * Prepare document for printing
  */
 function prepareForPrinting() {
   if (!window.lastResults) {
@@ -344,80 +344,78 @@ function prepareForPrinting() {
     return;
   }
   
-  // Create a hidden print-only element to show during printing
-  const printMessage = document.createElement('div');
-  printMessage.id = 'print-instructions';
-  printMessage.style.display = 'none';
-  printMessage.innerHTML = `
-    <div style="text-align: center; margin: 20px 0; font-size: 14px; color: #666;">
-      <p>For optimal results when printing, please select these options in your print dialog:</p>
+  // Add current date to header
+  const header = document.querySelector('header');
+  header.setAttribute('data-date', new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  }));
+  
+  // Create print info section
+  const printInfo = document.createElement('div');
+  printInfo.id = 'print-info';
+  printInfo.style.display = 'none';
+  printInfo.innerHTML = `
+    <div style="margin: 0.3in 0; font-size: 10pt; color: #666;">
+      <p><strong>Forecast Parameters:</strong></p>
       <ul style="list-style-type: none; padding: 0;">
-        <li>• Print background colors and images</li>
-        <li>• Print headers and footers</li>
-        <li>• Paper size: Letter or A4</li>
-        <li>• Scale: 100%</li>
+        <li>Quake ID: ${document.getElementById('QuakeID').value}</li>
+        <li>Magnitude: ${document.getElementById('magnitude').value}</li>
+        <li>Calculation Time: ${new Date().toLocaleString()}</li>
       </ul>
     </div>
   `;
-  document.body.appendChild(printMessage);
   
-  // Add a print-only stylesheet with very basic styles
+  // Insert print info after header
+  const header = document.querySelector('header');
+  header.parentNode.insertBefore(printInfo, header.nextSibling);
+  
+  // Add print-specific styles
   const printStyles = document.createElement('style');
   printStyles.id = 'print-styles';
   printStyles.textContent = `
     @media print {
-      /* Hide everything initially */
-      body * {
-        visibility: hidden;
-      }
-      
-      /* Only show what we want to print */
-      #Results, #Results *, #VisualizationSection, #VisualizationSection *, #print-instructions, #print-instructions * {
-        visibility: visible;
-      }
-      
-      /* Basic adjustments */
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      
-      #Params, #QuakeInfo, button {
-        display: none !important;
-      }
-      
-      #print-instructions {
+      #print-info {
         display: block !important;
       }
       
-      /* Force page break between results and visualization */
-      #VisualizationSection {
-        page-break-before: always;
+      /* Ensure table headers repeat on each page */
+      thead {
+        display: table-header-group;
       }
       
-      /* Table styling */
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      
+      /* Add subtle grid lines */
       td, th {
-        border: 1px solid black;
-        padding: 5px;
+        position: relative;
+      }
+      
+      td::after, th::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background-color: #e0e0e0;
+      }
+      
+      /* Format numbers */
+      td:nth-child(2), td:nth-child(4), td:nth-child(6) {
+        font-family: "Courier New", monospace;
       }
     }
   `;
   document.head.appendChild(printStyles);
   
-  // Show print instructions
-  printMessage.style.display = 'block';
-  
   // Print the page
   window.print();
   
-  // Remove temporary elements after a delay
+  // Clean up
   setTimeout(() => {
-    if (printMessage.parentNode) printMessage.parentNode.removeChild(printMessage);
+    if (printInfo.parentNode) printInfo.parentNode.removeChild(printInfo);
     if (printStyles.parentNode) printStyles.parentNode.removeChild(printStyles);
   }, 1000);
 }
