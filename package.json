@@ -1,0 +1,28 @@
+{
+  "name": "aftershock-calculator",
+  "version": "1.0.0",
+  "description": "Generate aftershock forecasts for earthquake events",
+  "homepage": "https://kennygraham1.github.io/aftershock-calculator",
+  "main": "js/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "node tests/aftershockModel.test.js",
+    "deploy": "gh-pages -d . --dotfiles true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KennyGraham1/aftershock-calculator.git"
+  },
+  "keywords": [
+    "earthquake",
+    "aftershock",
+    "forecast",
+    "seismology"
+  ],
+  "author": "Kenny Graham",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
