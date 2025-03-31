@@ -6,8 +6,6 @@
   "main": "js/main.js",
   "type": "module",
   "scripts": {
-    "start": "python -m http.server 8000",
-    "test": "node tests/aftershockModel.test.js",
     "deploy": "gh-pages -d . --dotfiles true"
   },
   "repository": {
